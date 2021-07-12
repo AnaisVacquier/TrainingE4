@@ -2,7 +2,6 @@
 package com.abylsen.rental.ui.views;
 
 import javax.annotation.PostConstruct;
-import javax.inject.Inject;
 
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.GridData;
@@ -17,11 +16,6 @@ import com.opcoach.training.rental.Rental;
 public class RentalPropertyPart {
 	
 	private Label rentedObjectLabel;
-	
-	@Inject
-	public RentalPropertyPart() {
-		
-	}
 	
 	@PostConstruct
 	public void createContent(Composite parent) {
@@ -42,8 +36,5 @@ public class RentalPropertyPart {
 	public void setRental(Rental rental) {
 		rentedObjectLabel.setText(rental.getRentedObject().getName());
 	}
-	
-	
-	
 	
 }

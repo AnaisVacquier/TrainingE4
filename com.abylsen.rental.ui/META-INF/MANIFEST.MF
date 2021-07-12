@@ -1,11 +1,12 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Ui
-Bundle-SymbolicName: com.abylsen.rental.ui
+Bundle-SymbolicName: com.abylsen.rental.ui;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-Vendor: ABYLSEN
 Require-Bundle: com.abylsen.rental.core;bundle-version="1.0.0",
- org.eclipse.jface
+ org.eclipse.jface,
+ org.eclipse.e4.ui.model.workbench;bundle-version="2.1.1000.v20210111-0958"
 Bundle-RequiredExecutionEnvironment: JavaSE-16
 Import-Package: javax.annotation;version="1.0.0";resolution:=optional,
  javax.inject;version="1.0.0"

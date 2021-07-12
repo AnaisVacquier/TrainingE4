@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="ASCII"?>
+<fragment:ModelFragments xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:advanced="http://www.eclipse.org/ui/2010/UIModel/application/ui/advanced" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/descriptor/basic" xmlns:basic_1="http://www.eclipse.org/ui/2010/UIModel/application/ui/basic" xmlns:fragment="http://www.eclipse.org/ui/2010/UIModel/fragment" xmi:id="_4iUngOMbEeuNfewEFpbEnQ">
+  <fragments xsi:type="fragment:StringModelFragment" xmi:id="_ApimQOMcEeuNfewEFpbEnQ" featurename="descriptors" parentElementId="xpath:/">
+    <elements xsi:type="basic:PartDescriptor" xmi:id="_Q-JdMOMcEeuNfewEFpbEnQ" elementId="com.abylsen.rental.ui.rentalpropertypart" label="Rental Property" iconURI="platform:/plugin/com.abylsen.rental.ui/icons/Rentals.png" tooltip="tooltip" contributionURI="bundleclass://com.abylsen.rental.ui/com.abylsen.rental.ui.views.RentalPropertyPart">
+      <tags>View</tags>
+    </elements>
+  </fragments>
+  <fragments xsi:type="fragment:StringModelFragment" xmi:id="_HTWrgOMfEeuNfewEFpbEnQ" featurename="snippets" parentElementId="xpath:/">
+    <elements xsi:type="advanced:Perspective" xmi:id="_OUzVAOMfEeuNfewEFpbEnQ" elementId="com.abylsen.rental.ui.perspective" label="Rental" iconURI="platform:/plugin/com.abylsen.rental.ui/icons/Agency.png">
+      <children xsi:type="basic_1:PartSashContainer" xmi:id="_dvjLwOMfEeuNfewEFpbEnQ" elementId="com.abylsen.rental.ui.partsashcontainer.0">
+        <children xsi:type="basic_1:PartStack" xmi:id="_fx0lgOMfEeuNfewEFpbEnQ" elementId="com.abylsen.rental.ui.partstack.0">
+          <children xsi:type="advanced:Placeholder" xmi:id="_gc-bUOMfEeuNfewEFpbEnQ" elementId="com.abylsen.rental.ui.rentalpropertypart"/>
+        </children>
+      </children>
+    </elements>
+  </fragments>
+</fragment:ModelFragments>
