@@ -6,10 +6,11 @@ Bundle-Version: 1.0.0.qualifier
 Bundle-Vendor: ABYLSEN
 Automatic-Module-Name: com.abylsen.rental.core
 Bundle-RequiredExecutionEnvironment: JavaSE-16
-Require-Bundle: org.eclipse.emf.ecore,
+Require-Bundle: org.eclipse.emf.ecore;visibility:=reexport,
  org.eclipse.osgi
 Bundle-ClassPath: libs/rental.jar,
  .
-Export-Package: com.opcoach.training.rental,
+Export-Package: com.abylsen.rental.core,
+ com.opcoach.training.rental,
  com.opcoach.training.rental.helpers
 Bundle-Activator: com.abylsen.rental.core.RentalCoreActivator
