@@ -9,7 +9,9 @@ Require-Bundle: com.abylsen.rental.core;bundle-version="1.0.0",
  org.eclipse.e4.ui.model.workbench,
  org.eclipse.nebula.visualization.xygraph,
  org.eclipse.draw2d,
- org.eclipse.nebula.visualization.widgets
+ org.eclipse.nebula.visualization.widgets,
+ org.eclipse.e4.core.services,
+ org.eclipse.e4.core.contexts
 Bundle-RequiredExecutionEnvironment: JavaSE-16
 Import-Package: javax.annotation;version="1.0.0";resolution:=optional,
  javax.inject;version="1.0.0"

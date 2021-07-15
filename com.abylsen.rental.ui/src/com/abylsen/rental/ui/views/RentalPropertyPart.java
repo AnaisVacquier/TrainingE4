@@ -22,8 +22,8 @@ import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Group;
 import org.eclipse.swt.widgets.Label;
 
-import com.abylsen.rental.core.RentalCoreActivator;
 import com.opcoach.training.rental.Rental;
+import com.opcoach.training.rental.RentalAgency;
 
 public class RentalPropertyPart {
 
@@ -35,7 +35,7 @@ public class RentalPropertyPart {
 	private static int counter = 0;
 
 	@PostConstruct
-	public void createContent(Composite parent) {
+	public void createContent(Composite parent, RentalAgency agency) {
 		parent.setLayout(new GridLayout(2, false));
 
 		Group infoGroup = new Group(parent, SWT.NONE);
@@ -85,7 +85,7 @@ public class RentalPropertyPart {
 
 		endRentalDateText = new Label(grpDatesDeLocation, SWT.NONE);
 
-		setRental(RentalCoreActivator.getAgency().getRentals().get(0));
+		setRental(agency.getRentals().get(0));
 
 		// Create widget
 		final ThermometerFigure thermo = new ThermometerFigure();
