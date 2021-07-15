@@ -5,6 +5,7 @@ import java.util.List;
 import org.eclipse.jface.viewers.ITreeContentProvider;
 import org.eclipse.jface.viewers.LabelProvider;
 
+import com.opcoach.training.rental.Customer;
 import com.opcoach.training.rental.RentalAgency;
 
 public class RentalProvider extends LabelProvider implements ITreeContentProvider {
@@ -19,7 +20,7 @@ public class RentalProvider extends LabelProvider implements ITreeContentProvide
 
 	@Override
 	public Object[] getChildren(Object parentElement) {
-		if(parentElement instanceof RentalAgency) {
+		if (parentElement instanceof RentalAgency) {
 			return ((RentalAgency) parentElement).getCustomers().toArray();
 		}
 		return null;
@@ -34,6 +35,16 @@ public class RentalProvider extends LabelProvider implements ITreeContentProvide
 	@Override
 	public boolean hasChildren(Object element) {
 		return true;
+	}
+
+	@Override
+	public String getText(Object element) {
+		if (element instanceof RentalAgency) {
+			return ((RentalAgency) element).getName();
+		} else if (element instanceof Customer) {
+			return ((Customer) element).getDisplayName();
+		}
+		return super.getText(element);
 	}
 
 }

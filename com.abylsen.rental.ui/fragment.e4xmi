@@ -8,10 +8,12 @@
   </fragments>
   <fragments xsi:type="fragment:StringModelFragment" xmi:id="_HTWrgOMfEeuNfewEFpbEnQ" featurename="snippets" parentElementId="xpath:/">
     <elements xsi:type="advanced:Perspective" xmi:id="_OUzVAOMfEeuNfewEFpbEnQ" elementId="com.abylsen.rental.ui.perspective" label="Rental" iconURI="platform:/plugin/com.abylsen.rental.ui/icons/Agency.png">
-      <children xsi:type="basic_1:PartSashContainer" xmi:id="_dvjLwOMfEeuNfewEFpbEnQ" elementId="com.abylsen.rental.ui.partsashcontainer.0">
+      <children xsi:type="basic_1:PartSashContainer" xmi:id="_dvjLwOMfEeuNfewEFpbEnQ" elementId="com.abylsen.rental.ui.partsashcontainer.0" horizontal="true">
+        <children xsi:type="basic_1:PartStack" xmi:id="_4hMpIOVrEeudrYqD7DpXdg" elementId="com.abylsen.rental.ui.partstack.1">
+          <children xsi:type="advanced:Placeholder" xmi:id="_EaXE8OVrEeudrYqD7DpXdg" elementId="com.abylsen.rental.ui.views.agencypart"/>
+        </children>
         <children xsi:type="basic_1:PartStack" xmi:id="_fx0lgOMfEeuNfewEFpbEnQ" elementId="com.abylsen.rental.ui.partstack.0">
           <children xsi:type="advanced:Placeholder" xmi:id="_gc-bUOMfEeuNfewEFpbEnQ" elementId="com.abylsen.rental.ui.rentalpropertypart"/>
-          <children xsi:type="advanced:Placeholder" xmi:id="_EaXE8OVrEeudrYqD7DpXdg" elementId="com.abylsen.rental.ui.views.agencypart"/>
         </children>
       </children>
     </elements>
