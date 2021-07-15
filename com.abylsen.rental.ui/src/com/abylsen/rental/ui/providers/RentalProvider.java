@@ -2,19 +2,25 @@ package com.abylsen.rental.ui.providers;
 
 import java.util.List;
 
+import javax.inject.Inject;
+import javax.inject.Named;
+
+import org.eclipse.jface.resource.ImageRegistry;
 import org.eclipse.jface.viewers.IColorProvider;
 import org.eclipse.jface.viewers.ITreeContentProvider;
 import org.eclipse.jface.viewers.LabelProvider;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Color;
+import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.widgets.Display;
 
+import com.abylsen.rental.ui.RentalUIConstants;
 import com.opcoach.training.rental.Customer;
 import com.opcoach.training.rental.Rental;
 import com.opcoach.training.rental.RentalAgency;
 import com.opcoach.training.rental.RentalObject;
 
-public class RentalProvider extends LabelProvider implements ITreeContentProvider, IColorProvider {
+public class RentalProvider extends LabelProvider implements ITreeContentProvider, IColorProvider, RentalUIConstants {
 
 	@Override
 	public Object[] getElements(Object inputElement) {
@@ -59,6 +65,22 @@ public class RentalProvider extends LabelProvider implements ITreeContentProvide
 		return super.getText(element);
 	}
 
+	@Inject
+	@Named(RENTAL_UI_IMG_REGISTRY)
+	private ImageRegistry imgRegistry;
+
+	@Override
+	public Image getImage(Object element) {
+		if (element instanceof RentalAgency) {
+			return imgRegistry.get(IMG_AGENCY);
+		} else if (element instanceof Customer) {
+			return imgRegistry.get(IMG_CUSTOMER);
+		} else if (element instanceof RentalObject) {
+			return imgRegistry.get(IMG_RENTAL_OBJECT);
+		}
+		return super.getImage(element);
+	}
+
 	public class Node {
 		private static final String OBJETSALOUER = "Objets à louer";
 		private static final String LOCATIONS = "Locations";
@@ -93,11 +115,11 @@ public class RentalProvider extends LabelProvider implements ITreeContentProvide
 
 	@Override
 	public Color getForeground(Object element) {
-		if(element instanceof Customer) {
+		if (element instanceof Customer) {
 			return Display.getCurrent().getSystemColor(SWT.COLOR_BLUE);
-		} else if(element instanceof RentalObject) {
+		} else if (element instanceof RentalObject) {
 			return Display.getCurrent().getSystemColor(SWT.COLOR_DARK_GREEN);
-		}else if(element instanceof Rental) {
+		} else if (element instanceof Rental) {
 			return Display.getCurrent().getSystemColor(SWT.COLOR_DARK_YELLOW);
 		}
 		return null;
