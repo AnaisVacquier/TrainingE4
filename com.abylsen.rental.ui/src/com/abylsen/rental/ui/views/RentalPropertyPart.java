@@ -8,9 +8,13 @@ import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
 
 import javax.annotation.PostConstruct;
+import javax.inject.Inject;
+import javax.inject.Named;
 
 import org.eclipse.draw2d.LightweightSystem;
 import org.eclipse.draw2d.SchemeBorder;
+import org.eclipse.e4.core.di.annotations.Optional;
+import org.eclipse.e4.ui.services.IServiceConstants;
 import org.eclipse.nebula.visualization.widgets.figures.ThermometerFigure;
 import org.eclipse.nebula.visualization.xygraph.util.XYGraphMediaFactory;
 import org.eclipse.swt.SWT;
@@ -123,7 +127,9 @@ public class RentalPropertyPart {
 
 	}
 
-	public void setRental(Rental rental) {
+	@Inject
+	@Optional
+	public void setRental(@Named(IServiceConstants.ACTIVE_SELECTION) Rental rental) {
 		rentedObjectLabel.setText(rental.getRentedObject().getName());
 		customerLabel.setText(rental.getCustomer().getDisplayName());
 
