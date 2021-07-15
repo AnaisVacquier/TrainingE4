@@ -120,6 +120,7 @@ public class RentalPropertyPart {
 
 		future.cancel(true);
 		scheduler.shutdown();
+
 	}
 
 	public void setRental(Rental rental) {
