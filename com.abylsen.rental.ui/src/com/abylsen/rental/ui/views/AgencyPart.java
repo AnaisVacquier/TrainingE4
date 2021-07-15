@@ -29,6 +29,8 @@ public class AgencyPart {
 		treeViewer.setContentProvider(provider);
 		treeViewer.setLabelProvider(provider);
 		treeViewer.setInput(Arrays.asList(agency));
+		
+		treeViewer.expandAll();
 
 	}
 
