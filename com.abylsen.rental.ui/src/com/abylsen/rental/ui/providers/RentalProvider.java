@@ -55,9 +55,9 @@ public class RentalProvider extends LabelProvider implements ITreeContentProvide
 	}
 
 	public class Node {
-		private static final String OBJETSALOUER = "objets à louer";
-		private static final String LOCATIONS = "locations";
-		private static final String CUSTOMERS = "customers";
+		private static final String OBJETSALOUER = "Objets à louer";
+		private static final String LOCATIONS = "Locations";
+		private static final String CUSTOMERS = "Clients";
 
 		private String label;
 		private RentalAgency agency;
