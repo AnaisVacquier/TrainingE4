@@ -22,7 +22,11 @@ public class RentalProvider extends LabelProvider implements ITreeContentProvide
 	public Object[] getChildren(Object parentElement) {
 		if (parentElement instanceof RentalAgency) {
 			RentalAgency a = (RentalAgency) parentElement;
-			return new Node[] { new Node(Node.CUSTOMERS, a) };
+			return new Node[] { 
+					new Node(Node.CUSTOMERS, a), 
+					new Node(Node.LOCATIONS, a),
+					new Node(Node.OBJETSALOUER, a) 
+					};
 		} else if (parentElement instanceof Node) {
 			return ((Node) parentElement).getChildren();
 		}
@@ -51,7 +55,10 @@ public class RentalProvider extends LabelProvider implements ITreeContentProvide
 	}
 
 	public class Node {
+		private static final String OBJETSALOUER = "objetsalouer";
+		private static final String LOCATIONS = "locations";
 		private static final String CUSTOMERS = "customers";
+
 		private String label;
 		private RentalAgency agency;
 
@@ -64,6 +71,10 @@ public class RentalProvider extends LabelProvider implements ITreeContentProvide
 		public Object[] getChildren() {
 			if (label == CUSTOMERS) {
 				return agency.getCustomers().toArray();
+			} else if (label == LOCATIONS) {
+				return agency.getRentals().toArray();
+			} else if (label == OBJETSALOUER) {
+				return agency.getObjectsToRent().toArray();
 			}
 			return null;
 		}
