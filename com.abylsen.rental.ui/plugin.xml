@@ -17,5 +17,11 @@
             name="rental colors">
       </page>
    </extension>
+   <extension
+         point="org.eclipse.core.runtime.preferences">
+      <initializer
+            class="com.abylsen.rental.ui.prefs.DefaultValues">
+      </initializer>
+   </extension>
 
 </plugin>
