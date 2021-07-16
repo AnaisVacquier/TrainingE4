@@ -42,7 +42,7 @@
     <elements xsi:type="commands:Command" xmi:id="_BGE-kOYMEeudrYqD7DpXdg" elementId="com.abylsen.rental.ui.menu.helloworld" commandName="Hello World"/>
   </fragments>
   <fragments xsi:type="fragment:StringModelFragment" xmi:id="_CG6UAOYNEeudrYqD7DpXdg" featurename="menuContributions" parentElementId="xpath:/">
-    <elements xsi:type="menu:MenuContribution" xmi:id="_DJ1JkOYNEeudrYqD7DpXdg" elementId="com.abylsen.rental.ui.menucontribution.0" parentId="org.eclipse.ui.main.menu">
+    <elements xsi:type="menu:MenuContribution" xmi:id="_DJ1JkOYNEeudrYqD7DpXdg" elementId="com.abylsen.rental.ui.menucontribution.0" positionInParent="after=additions" parentId="org.eclipse.ui.main.menu">
       <children xsi:type="menu:Menu" xmi:id="_eYTtEOYNEeudrYqD7DpXdg" elementId="hello.world.menu" label="Hello World Menu">
         <children xsi:type="menu:DirectMenuItem" xmi:id="_UpXikOYNEeudrYqD7DpXdg" elementId="id.directhelloworld" label="Direct hello world" contributionURI="bundleclass://com.abylsen.rental.ui/com.abylsen.rental.ui.handlers.AboutHandler"/>
         <children xsi:type="menu:HandledMenuItem" xmi:id="_IEiJAOYNEeudrYqD7DpXdg" elementId="id.helloworld" label="Hello World" iconURI="platform:/plugin/com.abylsen.rental.ui/icons/Agency.png" command="_BGE-kOYMEeudrYqD7DpXdg"/>
@@ -50,6 +50,9 @@
     </elements>
     <elements xsi:type="menu:MenuContribution" xmi:id="_lYr_kOYNEeudrYqD7DpXdg" elementId="com.abylsen.rental.ui.menucontribution.1" positionInParent="after=additions" parentId="hello.world.menu">
       <children xsi:type="menu:HandledMenuItem" xmi:id="_tDP3gOYNEeudrYqD7DpXdg" elementId="id.contribution.helloworld" label="Hello World via contribution" iconURI="platform:/plugin/com.abylsen.rental.ui/icons/Agency.png" command="_BGE-kOYMEeudrYqD7DpXdg"/>
+    </elements>
+    <elements xsi:type="menu:MenuContribution" xmi:id="_nA5BkOYPEeudrYqD7DpXdg" elementId="com.abylsen.rental.ui.menucontribution.2" positionInParent="after=additions" parentId="popup">
+      <children xsi:type="menu:HandledMenuItem" xmi:id="_0eFmgOYPEeudrYqD7DpXdg" elementId="id.contribution.helloworld" label="Hello World via contribution popup" iconURI="platform:/plugin/com.abylsen.rental.ui/icons/Agency.png" command="_BGE-kOYMEeudrYqD7DpXdg"/>
     </elements>
   </fragments>
 </fragment:ModelFragments>
