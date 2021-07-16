@@ -14,6 +14,7 @@ import javax.inject.Named;
 import org.eclipse.draw2d.LightweightSystem;
 import org.eclipse.draw2d.SchemeBorder;
 import org.eclipse.e4.core.di.annotations.Optional;
+import org.eclipse.e4.ui.services.EMenuService;
 import org.eclipse.e4.ui.services.IServiceConstants;
 import org.eclipse.nebula.visualization.widgets.figures.ThermometerFigure;
 import org.eclipse.nebula.visualization.xygraph.util.XYGraphMediaFactory;
@@ -39,7 +40,7 @@ public class RentalPropertyPart {
 	private static int counter = 0;
 
 	@PostConstruct
-	public void createContent(Composite parent, RentalAgency agency) {
+	public void createContent(Composite parent, RentalAgency agency, EMenuService menuService) {
 		parent.setLayout(new GridLayout(2, false));
 
 		Group infoGroup = new Group(parent, SWT.NONE);
@@ -124,6 +125,9 @@ public class RentalPropertyPart {
 
 		future.cancel(true);
 		scheduler.shutdown();
+		
+		menuService.registerContextMenu(infoGroup, "com.abylsen.rental.ui.popupmenu.helloinfo");
+		menuService.registerContextMenu(grpDatesDeLocation, "com.abylsen.rental.ui.popupmenu.hellodate");
 
 	}
 

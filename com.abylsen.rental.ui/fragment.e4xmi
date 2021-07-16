@@ -3,8 +3,22 @@
   <fragments xsi:type="fragment:StringModelFragment" xmi:id="_ApimQOMcEeuNfewEFpbEnQ" featurename="descriptors" parentElementId="xpath:/">
     <elements xsi:type="basic:PartDescriptor" xmi:id="_Q-JdMOMcEeuNfewEFpbEnQ" elementId="com.abylsen.rental.ui.rentalpropertypart" label="Rental Property" iconURI="platform:/plugin/com.abylsen.rental.ui/icons/Rentals.png" tooltip="tooltip" contributionURI="bundleclass://com.abylsen.rental.ui/com.abylsen.rental.ui.views.RentalPropertyPart">
       <tags>View</tags>
+      <menus xsi:type="menu:PopupMenu" xmi:id="_NF3qAOYPEeudrYqD7DpXdg" elementId="com.abylsen.rental.ui.popupmenu.helloinfo">
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_LpBRgOYPEeudrYqD7DpXdg" elementId="id.helloworld" label="Hello World info" iconURI="platform:/plugin/com.abylsen.rental.ui/icons/Agency.png" command="_BGE-kOYMEeudrYqD7DpXdg"/>
+      </menus>
+      <menus xsi:type="menu:PopupMenu" xmi:id="_Q__WMOYPEeudrYqD7DpXdg" elementId="com.abylsen.rental.ui.popupmenu.hellodate">
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_LjYjkOYPEeudrYqD7DpXdg" elementId="id.helloworld" label="Hello World date" iconURI="platform:/plugin/com.abylsen.rental.ui/icons/Agency.png" command="_BGE-kOYMEeudrYqD7DpXdg"/>
+      </menus>
     </elements>
-    <elements xsi:type="basic:PartDescriptor" xmi:id="_zZ2xUOVqEeudrYqD7DpXdg" elementId="com.abylsen.rental.ui.views.agencypart" label="Agencies" iconURI="platform:/plugin/com.abylsen.rental.ui/icons/Agency.png" contributionURI="bundleclass://com.abylsen.rental.ui/com.abylsen.rental.ui.views.AgencyPart"/>
+    <elements xsi:type="basic:PartDescriptor" xmi:id="_zZ2xUOVqEeudrYqD7DpXdg" elementId="com.abylsen.rental.ui.views.agencypart" label="Agencies" iconURI="platform:/plugin/com.abylsen.rental.ui/icons/Agency.png" contributionURI="bundleclass://com.abylsen.rental.ui/com.abylsen.rental.ui.views.AgencyPart">
+      <menus xmi:id="_IU3OkOYOEeudrYqD7DpXdg" elementId="com.abylsen.rental.ui.menu.helloworld" label="Hello World">
+        <tags>ViewMenu</tags>
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_LXtUgOYOEeudrYqD7DpXdg" elementId="id.helloworld" label="Hello World" iconURI="platform:/plugin/com.abylsen.rental.ui/icons/Agency.png" command="_BGE-kOYMEeudrYqD7DpXdg"/>
+      </menus>
+      <menus xsi:type="menu:PopupMenu" xmi:id="_SJ6oIOYOEeudrYqD7DpXdg" elementId="com.abylsen.rental.ui.popupmenu.helloworld" label="Hello World">
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_VS7ngOYOEeudrYqD7DpXdg" elementId="id.helloworld" label="Hello World" iconURI="platform:/plugin/com.abylsen.rental.ui/icons/Agency.png" command="_BGE-kOYMEeudrYqD7DpXdg"/>
+      </menus>
+    </elements>
   </fragments>
   <fragments xsi:type="fragment:StringModelFragment" xmi:id="_HTWrgOMfEeuNfewEFpbEnQ" featurename="snippets" parentElementId="xpath:/">
     <elements xsi:type="advanced:Perspective" xmi:id="_OUzVAOMfEeuNfewEFpbEnQ" elementId="com.abylsen.rental.ui.perspective" label="Rental" iconURI="platform:/plugin/com.abylsen.rental.ui/icons/Agency.png">

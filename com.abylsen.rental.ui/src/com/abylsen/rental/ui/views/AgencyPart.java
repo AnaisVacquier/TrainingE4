@@ -8,6 +8,7 @@ import javax.inject.Inject;
 
 import org.eclipse.e4.core.contexts.ContextInjectionFactory;
 import org.eclipse.e4.core.contexts.IEclipseContext;
+import org.eclipse.e4.ui.services.EMenuService;
 import org.eclipse.e4.ui.workbench.modeling.ESelectionService;
 import org.eclipse.jface.viewers.ISelectionChangedListener;
 import org.eclipse.jface.viewers.IStructuredSelection;
@@ -26,7 +27,7 @@ public class AgencyPart {
 
 	@PostConstruct
 	public void createContent(Composite parent, RentalAgency agency, IEclipseContext contexte,
-			ESelectionService selectionService) {
+			ESelectionService selectionService, EMenuService menuService) {
 
 		// treeviewer
 		TreeViewer treeViewer = new TreeViewer(parent);
@@ -48,6 +49,8 @@ public class AgencyPart {
 						.setSelection(selection.size() == 1 ? selection.getFirstElement() : selection.toArray());
 			}
 		});
+		
+		menuService.registerContextMenu(treeViewer.getControl(), "com.abylsen.rental.ui.popupmenu.helloworld");
 
 	}
 
