@@ -58,7 +58,7 @@
 				</configuration>
 			</plugin>
 
-			<!-- <plugin>
+			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-toolchains-plugin</artifactId>
 				<version>1.1</version>
@@ -72,12 +72,12 @@
 				<configuration>
 					<toolchains>
 						<jdk>
-							<version>JavaSE-14</version>
+							<version>JavaSE-11</version>
 							<vendor>openjdk</vendor>
 						</jdk>
 					</toolchains>
 				</configuration>
-			</plugin> -->
+			</plugin>
 
 		</plugins>
 	</build>
@@ -88,6 +88,8 @@
 		<module>com.abylsen.rental.core</module>
 		<module>com.abylsen.rental.ui</module>
 		<module>com.abylsen.rental.eap</module>
+		<module>com.abylsen.rental.feature</module>
+		<module>com.abylsen.rental.repository</module>
 	</modules>
 
 
