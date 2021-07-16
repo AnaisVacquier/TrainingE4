@@ -55,4 +55,11 @@
       <children xsi:type="menu:HandledMenuItem" xmi:id="_0eFmgOYPEeudrYqD7DpXdg" elementId="id.contribution.helloworld" label="Hello World via contribution popup" iconURI="platform:/plugin/com.abylsen.rental.ui/icons/Agency.png" command="_BGE-kOYMEeudrYqD7DpXdg"/>
     </elements>
   </fragments>
+  <fragments xsi:type="fragment:StringModelFragment" xmi:id="_UhyMgOYQEeudrYqD7DpXdg" featurename="trimContributions" parentElementId="xpath:/">
+    <elements xsi:type="menu:TrimContribution" xmi:id="_WDSbgOYQEeudrYqD7DpXdg" elementId="com.abylsen.rental.ui.trimcontribution.0" parentId="org.eclipse.ui.main.toolbar">
+      <children xsi:type="menu:ToolBar" xmi:id="_Ww_PAOYQEeudrYqD7DpXdg" elementId="com.abylsen.rental.ui.toolbar.main">
+        <children xsi:type="menu:HandledToolItem" xmi:id="_XgyUQOYQEeudrYqD7DpXdg" elementId="com.abylsen.rental.ui.handledtoolitem.helloworld" label="hello world" iconURI="platform:/plugin/com.abylsen.rental.ui/icons/Agency.png" command="_BGE-kOYMEeudrYqD7DpXdg"/>
+      </children>
+    </elements>
+  </fragments>
 </fragment:ModelFragments>
