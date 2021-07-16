@@ -2,7 +2,7 @@
 package com.abylsen.rental.ui;
 
 import javax.annotation.PostConstruct;
-
+import org.eclipse.core.runtime.preferences.InstanceScope;
 import org.eclipse.e4.core.contexts.IEclipseContext;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.resource.ImageRegistry;
@@ -10,6 +10,7 @@ import org.osgi.framework.Bundle;
 import org.osgi.framework.FrameworkUtil;
 
 import com.abylsen.rental.core.RentalCoreActivator;
+import com.opcoach.e4.preferences.ScopedPreferenceStore;
 import com.opcoach.training.rental.RentalAgency;
 
 public class RentalAddon implements RentalUIConstants {
@@ -18,6 +19,7 @@ public class RentalAddon implements RentalUIConstants {
 	public void rentalInit(IEclipseContext context) {
 		context.set(RentalAgency.class, RentalCoreActivator.getAgency());
 		context.set(RENTAL_UI_IMG_REGISTRY, getLocalImageRegistry());
+		context.set(RENTAL_UI_PREF_STORE, new ScopedPreferenceStore(InstanceScope.INSTANCE, PLUGIN_ID));
 	}
 
 	/**

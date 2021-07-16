@@ -5,14 +5,16 @@ import java.util.List;
 import javax.inject.Inject;
 import javax.inject.Named;
 
+import org.eclipse.jface.preference.IPreferenceStore;
+import org.eclipse.jface.resource.ColorRegistry;
 import org.eclipse.jface.resource.ImageRegistry;
+import org.eclipse.jface.resource.JFaceResources;
+import org.eclipse.jface.resource.StringConverter;
 import org.eclipse.jface.viewers.IColorProvider;
 import org.eclipse.jface.viewers.ITreeContentProvider;
 import org.eclipse.jface.viewers.LabelProvider;
-import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.Image;
-import org.eclipse.swt.widgets.Display;
 
 import com.abylsen.rental.ui.RentalUIConstants;
 import com.opcoach.training.rental.Customer;
@@ -116,19 +118,41 @@ public class RentalProvider extends LabelProvider implements ITreeContentProvide
 	@Override
 	public Color getForeground(Object element) {
 		if (element instanceof Customer) {
-			return Display.getCurrent().getSystemColor(SWT.COLOR_BLUE);
+			return getPrefColor(PREF_CUSTOMER_COLOR);
 		} else if (element instanceof RentalObject) {
-			return Display.getCurrent().getSystemColor(SWT.COLOR_DARK_GREEN);
+			return getPrefColor(PREF_RENTAL_OBJECT_COLOR);
 		} else if (element instanceof Rental) {
-			return Display.getCurrent().getSystemColor(SWT.COLOR_DARK_YELLOW);
+			return getPrefColor(PREF_RENTAL_COLOR);
 		}
 		return null;
 	}
 
 	@Override
 	public Color getBackground(Object element) {
-		// TODO Auto-generated method stub
 		return null;
+	}
+
+	@Inject
+	@Named(RENTAL_UI_PREF_STORE)
+	private IPreferenceStore pref;
+
+	/**
+	 * A private methode to get a color in the preference store
+	 * 
+	 * @param key the preference key to get the rgb value
+	 */
+	private Color getPrefColor(String key) {
+		ColorRegistry colorRegistry = JFaceResources.getColorRegistry();
+
+		String rgbKey = pref.getString(key);
+		Color result = colorRegistry.get(rgbKey);
+		if (result == null) {
+			// Get value in pref store
+			colorRegistry.put(rgbKey, StringConverter.asRGB(rgbKey));
+			result = colorRegistry.get(rgbKey);
+		}
+		return result;
+
 	}
 
 }

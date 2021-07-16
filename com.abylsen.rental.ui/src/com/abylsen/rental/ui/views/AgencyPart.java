@@ -3,11 +3,12 @@ package com.abylsen.rental.ui.views;
 
 import java.util.Arrays;
 
-import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 
 import org.eclipse.e4.core.contexts.ContextInjectionFactory;
 import org.eclipse.e4.core.contexts.IEclipseContext;
+import org.eclipse.e4.core.di.annotations.Optional;
+import org.eclipse.e4.core.di.extensions.Preference;
 import org.eclipse.e4.ui.services.EMenuService;
 import org.eclipse.e4.ui.workbench.modeling.ESelectionService;
 import org.eclipse.jface.viewers.ISelectionChangedListener;
@@ -16,21 +17,19 @@ import org.eclipse.jface.viewers.SelectionChangedEvent;
 import org.eclipse.jface.viewers.TreeViewer;
 import org.eclipse.swt.widgets.Composite;
 
+import com.abylsen.rental.ui.RentalUIConstants;
 import com.abylsen.rental.ui.providers.RentalProvider;
 import com.opcoach.training.rental.RentalAgency;
 
-public class AgencyPart {
+public class AgencyPart implements RentalUIConstants {
+
+	private TreeViewer treeViewer;
 
 	@Inject
-	public AgencyPart() {
-	}
-
-	@PostConstruct
-	public void createContent(Composite parent, RentalAgency agency, IEclipseContext contexte,
+	public AgencyPart(Composite parent, RentalAgency agency, IEclipseContext contexte,
 			ESelectionService selectionService, EMenuService menuService) {
 
-		// treeviewer
-		TreeViewer treeViewer = new TreeViewer(parent);
+		treeViewer = new TreeViewer(parent);
 
 		RentalProvider provider = ContextInjectionFactory.make(RentalProvider.class, contexte);
 
@@ -52,6 +51,12 @@ public class AgencyPart {
 		
 		menuService.registerContextMenu(treeViewer.getControl(), "com.abylsen.rental.ui.popupmenu.helloworld");
 
+	}
+
+	@Inject
+	@Optional
+	public void changeColorTree(@Preference(value = PREF_CUSTOMER_COLOR) String colorChanged) {
+		treeViewer.refresh();
 	}
 
 }
