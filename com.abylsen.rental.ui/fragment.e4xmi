@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ASCII"?>
-<fragment:ModelFragments xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:advanced="http://www.eclipse.org/ui/2010/UIModel/application/ui/advanced" xmlns:application="http://www.eclipse.org/ui/2010/UIModel/application" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/descriptor/basic" xmlns:basic_1="http://www.eclipse.org/ui/2010/UIModel/application/ui/basic" xmlns:fragment="http://www.eclipse.org/ui/2010/UIModel/fragment" xmi:id="_4iUngOMbEeuNfewEFpbEnQ">
+<fragment:ModelFragments xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:advanced="http://www.eclipse.org/ui/2010/UIModel/application/ui/advanced" xmlns:application="http://www.eclipse.org/ui/2010/UIModel/application" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/descriptor/basic" xmlns:basic_1="http://www.eclipse.org/ui/2010/UIModel/application/ui/basic" xmlns:commands="http://www.eclipse.org/ui/2010/UIModel/application/commands" xmlns:fragment="http://www.eclipse.org/ui/2010/UIModel/fragment" xmlns:menu="http://www.eclipse.org/ui/2010/UIModel/application/ui/menu" xmi:id="_4iUngOMbEeuNfewEFpbEnQ">
   <fragments xsi:type="fragment:StringModelFragment" xmi:id="_ApimQOMcEeuNfewEFpbEnQ" featurename="descriptors" parentElementId="xpath:/">
     <elements xsi:type="basic:PartDescriptor" xmi:id="_Q-JdMOMcEeuNfewEFpbEnQ" elementId="com.abylsen.rental.ui.rentalpropertypart" label="Rental Property" iconURI="platform:/plugin/com.abylsen.rental.ui/icons/Rentals.png" tooltip="tooltip" contributionURI="bundleclass://com.abylsen.rental.ui/com.abylsen.rental.ui.views.RentalPropertyPart">
       <tags>View</tags>
@@ -20,5 +20,22 @@
   </fragments>
   <fragments xsi:type="fragment:StringModelFragment" xmi:id="_bOAasOVREeudrYqD7DpXdg" featurename="addons" parentElementId="xpath:/">
     <elements xsi:type="application:Addon" xmi:id="_dvI6sOVREeudrYqD7DpXdg" elementId="com.abylsen.rental.ui.addon.0" contributionURI="bundleclass://com.abylsen.rental.ui/com.abylsen.rental.ui.RentalAddon"/>
+  </fragments>
+  <fragments xsi:type="fragment:StringModelFragment" xmi:id="_50r0kOYLEeudrYqD7DpXdg" featurename="handlers" parentElementId="xpath:/">
+    <elements xsi:type="commands:Handler" xmi:id="_8gCnkOYLEeudrYqD7DpXdg" elementId="com.abylsen.rental.ui.handler.0" contributionURI="bundleclass://com.abylsen.rental.ui/com.abylsen.rental.ui.handlers.AboutHandler" command="_BGE-kOYMEeudrYqD7DpXdg"/>
+  </fragments>
+  <fragments xsi:type="fragment:StringModelFragment" xmi:id="_-s8kAOYLEeudrYqD7DpXdg" featurename="commands" parentElementId="xpath:/">
+    <elements xsi:type="commands:Command" xmi:id="_BGE-kOYMEeudrYqD7DpXdg" elementId="com.abylsen.rental.ui.menu.helloworld" commandName="Hello World"/>
+  </fragments>
+  <fragments xsi:type="fragment:StringModelFragment" xmi:id="_CG6UAOYNEeudrYqD7DpXdg" featurename="menuContributions" parentElementId="xpath:/">
+    <elements xsi:type="menu:MenuContribution" xmi:id="_DJ1JkOYNEeudrYqD7DpXdg" elementId="com.abylsen.rental.ui.menucontribution.0" parentId="org.eclipse.ui.main.menu">
+      <children xsi:type="menu:Menu" xmi:id="_eYTtEOYNEeudrYqD7DpXdg" elementId="hello.world.menu" label="Hello World Menu">
+        <children xsi:type="menu:DirectMenuItem" xmi:id="_UpXikOYNEeudrYqD7DpXdg" elementId="id.directhelloworld" label="Direct hello world" contributionURI="bundleclass://com.abylsen.rental.ui/com.abylsen.rental.ui.handlers.AboutHandler"/>
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_IEiJAOYNEeudrYqD7DpXdg" elementId="id.helloworld" label="Hello World" iconURI="platform:/plugin/com.abylsen.rental.ui/icons/Agency.png" command="_BGE-kOYMEeudrYqD7DpXdg"/>
+      </children>
+    </elements>
+    <elements xsi:type="menu:MenuContribution" xmi:id="_lYr_kOYNEeudrYqD7DpXdg" elementId="com.abylsen.rental.ui.menucontribution.1" positionInParent="after=additions" parentId="hello.world.menu">
+      <children xsi:type="menu:HandledMenuItem" xmi:id="_tDP3gOYNEeudrYqD7DpXdg" elementId="id.contribution.helloworld" label="Hello World via contribution" iconURI="platform:/plugin/com.abylsen.rental.ui/icons/Agency.png" command="_BGE-kOYMEeudrYqD7DpXdg"/>
+    </elements>
   </fragments>
 </fragment:ModelFragments>
