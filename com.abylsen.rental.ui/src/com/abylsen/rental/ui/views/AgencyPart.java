@@ -55,7 +55,9 @@ public class AgencyPart implements RentalUIConstants {
 
 	@Inject
 	@Optional
-	public void changeColorTree(@Preference(value = PREF_CUSTOMER_COLOR) String colorChanged) {
+	public void changeColorTree(@Preference(value = PREF_CUSTOMER_COLOR) String customerColorChanged,
+			@Preference(value = PREF_RENTAL_COLOR) String rentalColorChanged,
+			@Preference(value = PREF_RENTAL_OBJECT_COLOR) String rentalObjectColorChanged) {
 		treeViewer.refresh();
 	}
 

@@ -1,6 +1,7 @@
 package com.abylsen.rental.ui.providers;
 
 import java.util.List;
+import java.util.Objects;
 
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -111,6 +112,33 @@ public class RentalProvider extends LabelProvider implements ITreeContentProvide
 		@Override
 		public String toString() {
 			return label;
+		}
+
+		@Override
+		public int hashCode() {
+			final int prime = 31;
+			int result = 1;
+			result = prime * result + getEnclosingInstance().hashCode();
+			result = prime * result + Objects.hash(agency, label);
+			return result;
+		}
+
+		@Override
+		public boolean equals(Object obj) {
+			if (this == obj)
+				return true;
+			if (obj == null)
+				return false;
+			if (getClass() != obj.getClass())
+				return false;
+			Node other = (Node) obj;
+			if (!getEnclosingInstance().equals(other.getEnclosingInstance()))
+				return false;
+			return Objects.equals(agency, other.agency) && Objects.equals(label, other.label);
+		}
+
+		private RentalProvider getEnclosingInstance() {
+			return RentalProvider.this;
 		}
 
 	}
