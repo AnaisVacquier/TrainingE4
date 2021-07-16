@@ -18,6 +18,9 @@
       <menus xsi:type="menu:PopupMenu" xmi:id="_SJ6oIOYOEeudrYqD7DpXdg" elementId="com.abylsen.rental.ui.popupmenu.helloworld" label="Hello World">
         <children xsi:type="menu:HandledMenuItem" xmi:id="_VS7ngOYOEeudrYqD7DpXdg" elementId="id.helloworld" label="Hello World" iconURI="platform:/plugin/com.abylsen.rental.ui/icons/Agency.png" command="_BGE-kOYMEeudrYqD7DpXdg"/>
       </menus>
+      <toolbar xmi:id="_1OrggOYQEeudrYqD7DpXdg" elementId="com.abylsen.rental.ui.toolbar.0">
+        <children xsi:type="menu:HandledToolItem" xmi:id="_2rTPgOYQEeudrYqD7DpXdg" elementId="com.abylsen.rental.ui.handledtoolitem.helloworld" label="hello world" iconURI="platform:/plugin/com.abylsen.rental.ui/icons/Agency.png" command="_BGE-kOYMEeudrYqD7DpXdg"/>
+      </toolbar>
     </elements>
   </fragments>
   <fragments xsi:type="fragment:StringModelFragment" xmi:id="_HTWrgOMfEeuNfewEFpbEnQ" featurename="snippets" parentElementId="xpath:/">
