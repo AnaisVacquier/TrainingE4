@@ -9,5 +9,13 @@
             apply="always">
       </fragment>
    </extension>
+   <extension
+         point="com.opcoach.e4.preferences.e4PreferencePages">
+      <page
+            class="com.abylsen.rental.ui.prefs.RentalColorPage"
+            id="com.abylsen.rental.ui.color.page"
+            name="rental colors">
+      </page>
+   </extension>
 
 </plugin>
