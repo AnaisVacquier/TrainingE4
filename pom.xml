@@ -86,6 +86,8 @@
 	<modules>
 		<module>com.abylsen.rental.tp</module>
 		<module>com.abylsen.rental.core</module>
+		<module>com.abylsen.rental.ui</module>
+		<module>com.abylsen.rental.eap</module>
 	</modules>
 
 
