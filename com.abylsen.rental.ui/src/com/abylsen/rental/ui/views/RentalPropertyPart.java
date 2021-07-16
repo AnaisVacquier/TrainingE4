@@ -134,6 +134,9 @@ public class RentalPropertyPart {
 	@Inject
 	@Optional
 	public void setRental(@Named(IServiceConstants.ACTIVE_SELECTION) Rental rental) {
+		if (rentedObjectLabel == null) {
+			return;
+		}
 		rentedObjectLabel.setText(rental.getRentedObject().getName());
 		customerLabel.setText(rental.getCustomer().getDisplayName());
 

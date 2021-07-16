@@ -14,8 +14,6 @@
     <setAttribute key="deselected_workspace_bundles">
         <setEntry value="com.abylsen.e4.ext"/>
         <setEntry value="com.abylsen.e4.sample"/>
-        <setEntry value="com.abylsen.rental.core"/>
-        <setEntry value="com.abylsen.rental.ui"/>
     </setAttribute>
     <booleanAttribute key="includeOptional" value="true"/>
     <stringAttribute key="location" value="${workspace_loc}/../runtime-RentalEAP"/>
@@ -34,6 +32,8 @@
     <stringAttribute key="product" value="com.abylsen.rental.eap.product"/>
     <setAttribute key="selected_target_bundles">
         <setEntry value="com.ibm.icu@default:default"/>
+        <setEntry value="com.opcoach.e4.preferences.mainmenu@default:default"/>
+        <setEntry value="com.opcoach.e4.preferences@default:default"/>
         <setEntry value="com.sun.jna*5.8.0.v20210503-0343@default:default"/>
         <setEntry value="com.sun.jna.platform*5.8.0.v20210406-1004@default:default"/>
         <setEntry value="jakarta.servlet-api@default:default"/>
@@ -66,6 +66,7 @@
         <setEntry value="org.eclipse.core.resources@default:default"/>
         <setEntry value="org.eclipse.core.runtime@default:true"/>
         <setEntry value="org.eclipse.core.variables@default:default"/>
+        <setEntry value="org.eclipse.draw2d@default:default"/>
         <setEntry value="org.eclipse.e4.core.commands@default:default"/>
         <setEntry value="org.eclipse.e4.core.contexts@default:default"/>
         <setEntry value="org.eclipse.e4.core.di.annotations@default:default"/>
@@ -74,6 +75,11 @@
         <setEntry value="org.eclipse.e4.core.di@default:default"/>
         <setEntry value="org.eclipse.e4.core.services@default:default"/>
         <setEntry value="org.eclipse.e4.emf.xpath@default:default"/>
+        <setEntry value="org.eclipse.e4.tools.context.spy@default:default"/>
+        <setEntry value="org.eclipse.e4.tools.emf.ui"/>
+        <setEntry value="org.eclipse.e4.tools.model.spy@default:default"/>
+        <setEntry value="org.eclipse.e4.tools.services"/>
+        <setEntry value="org.eclipse.e4.tools.spy@default:default"/>
         <setEntry value="org.eclipse.e4.ui.bindings@default:default"/>
         <setEntry value="org.eclipse.e4.ui.css.core@default:default"/>
         <setEntry value="org.eclipse.e4.ui.css.swt.theme@default:default"/>
@@ -84,22 +90,32 @@
         <setEntry value="org.eclipse.e4.ui.services@default:default"/>
         <setEntry value="org.eclipse.e4.ui.swt.win32@default:false"/>
         <setEntry value="org.eclipse.e4.ui.widgets@default:default"/>
+        <setEntry value="org.eclipse.e4.ui.workbench.addons.swt"/>
         <setEntry value="org.eclipse.e4.ui.workbench.renderers.swt@default:default"/>
         <setEntry value="org.eclipse.e4.ui.workbench.swt@default:default"/>
         <setEntry value="org.eclipse.e4.ui.workbench3@default:default"/>
         <setEntry value="org.eclipse.e4.ui.workbench@default:default"/>
         <setEntry value="org.eclipse.emf.common@default:default"/>
+        <setEntry value="org.eclipse.emf.databinding"/>
+        <setEntry value="org.eclipse.emf.databinding.edit"/>
         <setEntry value="org.eclipse.emf.ecore.change@default:default"/>
         <setEntry value="org.eclipse.emf.ecore.xmi@default:default"/>
         <setEntry value="org.eclipse.emf.ecore@default:default"/>
+        <setEntry value="org.eclipse.emf.edit"/>
         <setEntry value="org.eclipse.equinox.app@default:default"/>
         <setEntry value="org.eclipse.equinox.bidi@default:default"/>
         <setEntry value="org.eclipse.equinox.common@2:true"/>
         <setEntry value="org.eclipse.equinox.event@default:default"/>
         <setEntry value="org.eclipse.equinox.preferences@default:default"/>
         <setEntry value="org.eclipse.equinox.registry@default:default"/>
+        <setEntry value="org.eclipse.help"/>
+        <setEntry value="org.eclipse.jdt.core"/>
         <setEntry value="org.eclipse.jface.databinding@default:default"/>
+        <setEntry value="org.eclipse.jface.notifications"/>
+        <setEntry value="org.eclipse.jface.text"/>
         <setEntry value="org.eclipse.jface@default:default"/>
+        <setEntry value="org.eclipse.nebula.visualization.widgets@default:default"/>
+        <setEntry value="org.eclipse.nebula.visualization.xygraph@default:default"/>
         <setEntry value="org.eclipse.osgi.compatibility.state@default:false"/>
         <setEntry value="org.eclipse.osgi.services@default:default"/>
         <setEntry value="org.eclipse.osgi.util@default:default"/>
@@ -107,6 +123,10 @@
         <setEntry value="org.eclipse.swt.win32.win32.x86_64@default:false"/>
         <setEntry value="org.eclipse.swt@default:default"/>
         <setEntry value="org.eclipse.team.core@default:default"/>
+        <setEntry value="org.eclipse.text"/>
+        <setEntry value="org.eclipse.ui"/>
+        <setEntry value="org.eclipse.ui.forms"/>
+        <setEntry value="org.eclipse.ui.workbench"/>
         <setEntry value="org.eclipse.urischeme@default:default"/>
         <setEntry value="org.w3c.css.sac@default:default"/>
         <setEntry value="org.w3c.dom.events@default:default"/>
@@ -114,7 +134,9 @@
         <setEntry value="org.w3c.dom.svg@default:default"/>
     </setAttribute>
     <setAttribute key="selected_workspace_bundles">
+        <setEntry value="com.abylsen.rental.core@default:default"/>
         <setEntry value="com.abylsen.rental.eap@default:default"/>
+        <setEntry value="com.abylsen.rental.ui@default:default"/>
     </setAttribute>
     <booleanAttribute key="show_selected_only" value="false"/>
     <stringAttribute key="templateConfig" value="${target_home}\configuration\config.ini"/>
