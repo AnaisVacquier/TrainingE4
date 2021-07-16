@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
-<fragment:ModelFragments xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:advanced="http://www.eclipse.org/ui/2010/UIModel/application/ui/advanced" xmlns:application="http://www.eclipse.org/ui/2010/UIModel/application" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/descriptor/basic" xmlns:basic_1="http://www.eclipse.org/ui/2010/UIModel/application/ui/basic" xmlns:commands="http://www.eclipse.org/ui/2010/UIModel/application/commands" xmlns:fragment="http://www.eclipse.org/ui/2010/UIModel/fragment" xmlns:menu="http://www.eclipse.org/ui/2010/UIModel/application/ui/menu" xmi:id="_4iUngOMbEeuNfewEFpbEnQ">
+<fragment:ModelFragments xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:advanced="http://www.eclipse.org/ui/2010/UIModel/application/ui/advanced" xmlns:application="http://www.eclipse.org/ui/2010/UIModel/application" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/descriptor/basic" xmlns:basic_1="http://www.eclipse.org/ui/2010/UIModel/application/ui/basic" xmlns:commands="http://www.eclipse.org/ui/2010/UIModel/application/commands" xmlns:fragment="http://www.eclipse.org/ui/2010/UIModel/fragment" xmlns:menu="http://www.eclipse.org/ui/2010/UIModel/application/ui/menu" xmlns:ui="http://www.eclipse.org/ui/2010/UIModel/application/ui" xmi:id="_4iUngOMbEeuNfewEFpbEnQ">
+  <imports xsi:type="commands:Command" xmi:id="_5J9GcOYUEeudrYqD7DpXdg" elementId="org.eclipse.ui.edit.copy"/>
   <fragments xsi:type="fragment:StringModelFragment" xmi:id="_ApimQOMcEeuNfewEFpbEnQ" featurename="descriptors" parentElementId="xpath:/">
     <elements xsi:type="basic:PartDescriptor" xmi:id="_Q-JdMOMcEeuNfewEFpbEnQ" elementId="com.abylsen.rental.ui.rentalpropertypart" label="Rental Property" iconURI="platform:/plugin/com.abylsen.rental.ui/icons/Rentals.png" tooltip="tooltip" contributionURI="bundleclass://com.abylsen.rental.ui/com.abylsen.rental.ui.views.RentalPropertyPart">
       <tags>View</tags>
@@ -11,12 +12,16 @@
       </menus>
     </elements>
     <elements xsi:type="basic:PartDescriptor" xmi:id="_zZ2xUOVqEeudrYqD7DpXdg" elementId="com.abylsen.rental.ui.views.agencypart" label="Agencies" iconURI="platform:/plugin/com.abylsen.rental.ui/icons/Agency.png" contributionURI="bundleclass://com.abylsen.rental.ui/com.abylsen.rental.ui.views.AgencyPart">
+      <handlers xmi:id="_8_emgOYUEeudrYqD7DpXdg" elementId="com.abylsen.rental.ui.handler.1" contributionURI="bundleclass://com.abylsen.rental.ui/com.abylsen.rental.ui.handlers.CopyCustomerHandler" command="_5J9GcOYUEeudrYqD7DpXdg"/>
       <menus xmi:id="_IU3OkOYOEeudrYqD7DpXdg" elementId="com.abylsen.rental.ui.menu.helloworld" label="Hello World">
         <tags>ViewMenu</tags>
         <children xsi:type="menu:HandledMenuItem" xmi:id="_LXtUgOYOEeudrYqD7DpXdg" elementId="id.helloworld" label="Hello World" iconURI="platform:/plugin/com.abylsen.rental.ui/icons/Agency.png" command="_BGE-kOYMEeudrYqD7DpXdg"/>
       </menus>
       <menus xsi:type="menu:PopupMenu" xmi:id="_SJ6oIOYOEeudrYqD7DpXdg" elementId="com.abylsen.rental.ui.popupmenu.helloworld" label="Hello World">
         <children xsi:type="menu:HandledMenuItem" xmi:id="_VS7ngOYOEeudrYqD7DpXdg" elementId="id.helloworld" label="Hello World" iconURI="platform:/plugin/com.abylsen.rental.ui/icons/Agency.png" command="_BGE-kOYMEeudrYqD7DpXdg"/>
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_DjTqcOYWEeudrYqD7DpXdg" elementId="com.abylsen.rental.ui.handledmenuitem.copycustomer" label="copy customer" command="_5J9GcOYUEeudrYqD7DpXdg">
+          <visibleWhen xsi:type="ui:ImperativeExpression" xmi:id="_2qrVsOYWEeudrYqD7DpXdg" contributionURI="bundleclass://com.abylsen.rental.ui/com.abylsen.rental.ui.handlers.CopyCustomerHandler"/>
+        </children>
       </menus>
       <toolbar xmi:id="_1OrggOYQEeudrYqD7DpXdg" elementId="com.abylsen.rental.ui.toolbar.0">
         <children xsi:type="menu:HandledToolItem" xmi:id="_2rTPgOYQEeudrYqD7DpXdg" elementId="com.abylsen.rental.ui.handledtoolitem.helloworld" label="hello world" iconURI="platform:/plugin/com.abylsen.rental.ui/icons/Agency.png" command="_BGE-kOYMEeudrYqD7DpXdg"/>
