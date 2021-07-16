@@ -1,12 +1,12 @@
 
 package com.abylsen.rental.ui.handlers;
 
-import javax.inject.Inject;
 import javax.inject.Named;
 
 import org.eclipse.e4.core.di.annotations.CanExecute;
 import org.eclipse.e4.core.di.annotations.Evaluate;
 import org.eclipse.e4.core.di.annotations.Execute;
+import org.eclipse.e4.core.services.events.IEventBroker;
 import org.eclipse.e4.ui.services.IServiceConstants;
 import org.eclipse.swt.dnd.Clipboard;
 import org.eclipse.swt.dnd.RTFTransfer;
@@ -19,7 +19,7 @@ import com.opcoach.training.rental.Customer;
 public class CopyCustomerHandler {
 
 	@Execute
-	public void execute(@Named(IServiceConstants.ACTIVE_SELECTION) Customer	customer) {
+	public void execute(@Named(IServiceConstants.ACTIVE_SELECTION) Customer customer, IEventBroker broker) {
 		Clipboard clipboard = new Clipboard(Display.getCurrent());
 		String textData = "Hello World " + customer.getDisplayName();
 		String rtfData = "{\\rtf1\\b\\i Hello World " + customer.getDisplayName() + "}";
@@ -29,7 +29,7 @@ public class CopyCustomerHandler {
 		Object[] data = new Object[] { textData, rtfData };
 		clipboard.setContents(data, transfers);
 		clipboard.dispose();
-		System.out.println("copie du client "+customer.getDisplayName());
+		broker.send("rental/customer/copy", customer);
 	}
 
 	@CanExecute
