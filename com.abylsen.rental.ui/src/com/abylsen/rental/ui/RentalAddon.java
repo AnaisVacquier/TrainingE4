@@ -3,13 +3,16 @@ package com.abylsen.rental.ui;
 
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
+import javax.inject.Named;
 
 import org.eclipse.core.runtime.preferences.InstanceScope;
 import org.eclipse.e4.core.contexts.IEclipseContext;
 import org.eclipse.e4.core.di.annotations.Optional;
 import org.eclipse.e4.ui.di.UIEventTopic;
+import org.eclipse.e4.ui.services.IServiceConstants;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.resource.ImageRegistry;
+import org.eclipse.swt.widgets.Shell;
 import org.osgi.framework.Bundle;
 import org.osgi.framework.FrameworkUtil;
 
@@ -21,7 +24,13 @@ import com.opcoach.training.rental.RentalAgency;
 public class RentalAddon implements RentalUIConstants {
 
 	@PostConstruct
-	public void rentalInit(IEclipseContext context) {
+	public void rentalInit(IEclipseContext context, @Named(IServiceConstants.ACTIVE_SHELL) Shell shell) {
+		/*
+		 * PreferenceDialog dialog = PreferencesUtil.createPreferenceDialogOn(shell,
+		 * "com.abylsen.rental.ui.prefs.LoginPreferencePage", new String[] {
+		 * "com.abylsen.rental.ui.prefs.LoginPreferencePage" }, null); dialog.open();
+		 */
+
 		context.set(RentalAgency.class, RentalCoreActivator.getAgency());
 		context.set(RENTAL_UI_IMG_REGISTRY, getLocalImageRegistry());
 		context.set(RENTAL_UI_PREF_STORE, new ScopedPreferenceStore(InstanceScope.INSTANCE, PLUGIN_ID));
@@ -49,8 +58,9 @@ public class RentalAddon implements RentalUIConstants {
 
 		return reg;
 	}
-	
-	@Inject @Optional
+
+	@Inject
+	@Optional
 	public void getCopyEvent(@UIEventTopic("rental/*") Customer customer) {
 		System.out.println("nouvel event");
 	}

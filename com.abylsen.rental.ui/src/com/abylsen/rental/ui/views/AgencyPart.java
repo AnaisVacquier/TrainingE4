@@ -61,4 +61,12 @@ public class AgencyPart implements RentalUIConstants {
 		treeViewer.refresh();
 	}
 
+	@Inject
+	@Optional
+	public void setLoginPage(@Preference(value = P_URL) String url, 
+			@Preference(value = P_USERNAME) String username,
+			@Preference(value = P_PASSWORD) String password) {
+		treeViewer.refresh();
+	}
+
 }

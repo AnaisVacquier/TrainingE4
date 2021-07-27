@@ -20,7 +20,10 @@ Require-Bundle: com.abylsen.rental.core;bundle-version="1.0.0",
  org.eclipse.equinox.preferences,
  org.eclipse.e4.core.di.extensions,
  org.eclipse.core.runtime,
- org.eclipse.e4.ui.di
+ org.eclipse.e4.ui.di,
+ org.eclipse.equinox.security,
+ org.eclipse.ui,
+ org.slf4j.api
 Bundle-RequiredExecutionEnvironment: JavaSE-11
 Import-Package: javax.annotation;version="1.0.0";resolution:=optional,
  javax.inject;version="1.0.0"

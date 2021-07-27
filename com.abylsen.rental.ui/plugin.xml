@@ -21,6 +21,11 @@
             id="com.abylsen.rental.ui.color.page"
             name="rental colors">
       </page>
+      <page
+            class="com.abylsen.rental.ui.prefs.LoginPreferencePage"
+            id="com.abylsen.rental.ui.login.page"
+            name="login">
+      </page>
    </extension>
    <extension
          point="org.eclipse.core.runtime.preferences">

@@ -165,7 +165,7 @@ public class RentalProvider extends LabelProvider implements ITreeContentProvide
 	private IPreferenceStore pref;
 
 	/**
-	 * A private methode to get a color in the preference store
+	 * A private method to get a color in the preference store
 	 * 
 	 * @param key the preference key to get the rgb value
 	 */
